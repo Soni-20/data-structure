@@ -8,14 +8,19 @@ struct node
 struct node *head,*newnode,*temp,*prev;
 void push()
 {
+	temp=head;
 	printf("Enter the data ");
 	scanf("%d",&newnode->data);
-	newnode->next=head;
-	head=newnode;	
+	while(temp->next!=NULL)
+	 {
+		temp=temp->next;	
+	 }
+	temp->next=newnode;
+	newnode->next=0;
 }
 void pop()
 {
-	head=head->next;
+head=head->next;	
 }
 void display()
 {
